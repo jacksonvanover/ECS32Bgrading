@@ -39,15 +39,15 @@ def prob1():
     try:
         x = QueueX()
     except:
-        print("\nConstructor crash")
+        print("\nConstructor")
         flag = crash(flag)
     
     try:
         if x.isEmpty() != True:
-            print("\nisEmpty Error")
+            print("\nisEmpty mismatch")
             flag += 1
     except:
-        print("\nisEmpty crash")
+        print("\nisEmpty")
         flag = crash(flag)
     
     try:
@@ -57,23 +57,23 @@ def prob1():
         x.enqueue(4)
         x.enqueue(5)
     except:
-        print("\nenqueue crash")
+        print("\nenqueue")
         flag = crash(flag)
 
     try:
         if x.size() != 5:
-            print("\nsize Error")
+            print("\nsize mismatch")
             flag += 1
     except:
-        print("\nsize crash")
+        print("\nsize")
         flag = crash(flag)
 
     try:
         if x.dequeue() != 1:
-            print("\ndequeue error")
+            print("\ndequeue mismatch")
             flag += 1
     except:
-        print("\ndequeue crash")
+        print("\ndequeue")
         flag = crash(flag)
 
     return flag
@@ -83,15 +83,15 @@ def prob3():
     try:
         x = Stack()
     except:
-        print("\nConstructor crash")
+        print("\nConstructor")
         flag = crash(flag)
     
     try:
         if x.isEmpty() != True:
-            print("\nisEmpty Error")
+            print("\nisEmpty mismatch")
             flag += 1
     except:
-        print("\nisEmpty crash")
+        print("\nisEmpty")
         flag = crash(flag)
     
     try:
@@ -101,23 +101,23 @@ def prob3():
         x.push(2)
         x.push(1)
     except:
-        print("\npush crash")
+        print("\npush")
         flag = crash(flag)
 
     try:
         if x.size() != 5:
-            print("\nsize Error")
+            print("\nsize mismatch")
             flag += 1
     except:
-        print("\nsize crash")
+        print("\nsize")
         flag = crash(flag)
 
     try:
         if x.pop() != 1:
-            print("\npop error")
+            print("\npop mismatch")
             flag += 1
     except:
-        print("\npop crash")
+        print("\npop")
         flag = crash(flag)
 
     return flag
@@ -127,15 +127,15 @@ def prob4():
     try:
         x = Queue()
     except:
-        print("\nConstructor crash")
+        print("\nConstructor")
         flag = crash(flag)
     
     try:
         if x.isEmpty() != True:
-            print("\nisEmpty Error")
+            print("\nisEmpty mismatch")
             flag += 1
     except:
-        print("\nisEmpty crash")
+        print("\nisEmpty")
         flag = crash(flag)
     
     try:
@@ -145,23 +145,23 @@ def prob4():
         x.enqueue(4)
         x.enqueue(5)
     except:
-        print("\nenqueue crash")
+        print("\nenqueue")
         flag = crash(flag)
 
     try:
         if x.size() != 5:
-            print("\nsize Error")
+            print("\nsize mismatch")
             flag += 1
     except:
-        print("\nsize crash")
+        print("\nsize")
         flag = crash(flag)
 
     try:
         if x.dequeue() != 1:
-            print("\ndequeue error")
+            print("\ndequeue mismatch")
             flag += 1
     except:
-        print("\ndequeue crash")
+        print("\ndequeue")
         flag = crash(flag)
 
     return flag
@@ -171,14 +171,14 @@ def prob5():
     try:
         x = Deque()
     except:
-        print("\nConstructor crash")
+        print("\nConstructor")
         flag = crash(flag)
     try:
         if x.isEmpty() != True:
-            print("\nisEmpty Error")
+            print("\nisEmpty mismatch")
             flag += 1
     except:
-        print("\nisEmpty crash")
+        print("\nisEmpty")
         flag = crash(flag)
     
     try:
@@ -186,38 +186,38 @@ def prob5():
         x.addFront(2)
         x.addFront(1)
     except:
-        print("\naddFront crash")
+        print("\naddFront")
         flag = crash(flag)
 
     try:
         x.addRear(4)
         x.addRear(5)
     except:
-        print("\naddRear crash")
+        print("\naddRear")
         flag = crash(flag)
 
     try:
         if x.size() != 5:
-            print("\nsize Error")
+            print("\nsize mismatch")
             flag += 1
     except:
-        print("\nsize crash")
+        print("\nsize")
         flag = crash(flag)
 
     try:
         if x.removeFront() != 1:
-            print("\nremoveFront error")
+            print("\nremoveFront mismatch")
             flag += 1
     except:
-        print("\nremoveFront crash")
+        print("\nremoveFront")
         flag = crash(flag)
 
     try:
         if x.removeRear() != 5:
-            print("\nremoveRear error")
+            print("\nremoveRear mismatch")
             flag += 1
     except:
-        print("\nremoveRear crash")
+        print("\nremoveRear")
         flag = crash(flag)
 
     return flag
@@ -227,15 +227,15 @@ def prob6():
     try:
         x = Deque2()
     except:
-        print("\nConstructor crash")
+        print("\nConstructor")
         flag = crash(flag)
     
     try:
         if x.isEmpty() != True:
-            print("\nisEmpty Error")
+            print("\nisEmpty mismatch")
             flag += 1
     except:
-        print("\nisEmpty crash")
+        print("\nisEmpty")
         flag = crash(flag)
     
     try:
@@ -243,38 +243,38 @@ def prob6():
         x.addFront(2)
         x.addFront(1)
     except:
-        print("\naddFront crash")
+        print("\naddFront")
         flag = crash(flag)
 
     try:
         x.addRear(4)
         x.addRear(5)
     except:
-        print("\naddRear crash")
+        print("\naddRear")
         flag = crash(flag)
 
     try:
         if x.size() != 5:
-            print("\nsize Error")
+            print("\nsize mismatch")
             flag += 1
     except:
-        print("\nsize crash")
+        print("\nsize")
         flag = crash(flag)
 
     try:
         if x.removeFront() != 1:
-            print("\nremoveFront error")
+            print("\nremoveFront mismatch")
             flag += 1
     except:
-        print("\nremoveFront crash")
+        print("\nremoveFront")
         flag = crash(flag)
 
     try:
         if x.removeRear() != 5:
-            print("\nremoveRear error")
+            print("\nremoveRear mismatch")
             flag += 1
     except:
-        print("\nremoveRear crash")
+        print("\nremoveRear")
         flag = crash(flag)
 
     return flag
