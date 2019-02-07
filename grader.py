@@ -1,8 +1,9 @@
+"""
 with open("hw2.py", 'r+') as f:
     content = f.read()
     f.seek(0, 0)
     f.write("from nodes import *".rstrip('\r\n') + '\n' + content)
-
+"""
 from hw2 import *
 
 def main():
@@ -36,26 +37,45 @@ def prob1():
         flag = 0
         x = QueueX()
         if x.isEmpty() is not True:
+            print("isEmpty Error")
             flag += 1
+
         x.enqueue(1)
         x.enqueue(2)
+
         if x.items[0] != 1:
+            print("enqueue error")
             flag += 1
         if x.size() != 2:
+            print("size error")
             flag += 1
+
         x.enqueue(3)
+
         if x.items[len(x.items)-1] != 3:
+            print("enqueue error")
             flag += 1
+
         if x.isEmpty() is True:
+            print("isEmpty error")
             flag += 1
+
         if x.items != [1,2,3]:
+            print("enqueue error")
             flag += 1
+
         if x.size() is not 3:
+            print("size error")
             flag += 1
+
         if x.dequeue() != 1:
+            print("dequeue error")
             flag += 1
+
         if x.items[0] != 2:
+            print("enqueue or dequeue error")
             flag += 1
+
         return flag    
 
     except:
