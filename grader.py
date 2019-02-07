@@ -10,29 +10,29 @@ import logging
 
 def main():
     if prob1() == 0:
-        print("***QueueX [PASSED]\n")
+        print("**************************************QueueX [PASSED]\n")
     else:
-        print("***QueueX [ERROR]\n")
+        print("**************************************QueueX [ERROR]\n")
 
     if prob3() == 0:
-        print("***Stack [PASSED]\n")
+        print("**************************************Stack [PASSED]\n")
     else:
-        print("***Stack [ERROR]\n")
+        print("**************************************Stack [ERROR]\n")
 
     if prob4() == 0:
-        print("***Queue [PASSED]\n")
+        print("**************************************Queue [PASSED]\n")
     else:
-        print("***Queue [ERROR]\n")  
+        print("**************************************Queue [ERROR]\n")  
 
     if prob5() == 0:
-        print("***Deque [PASSED]\n")
+        print("**************************************Deque [PASSED]\n")
     else:
-        print("***Deque [ERROR]\n")
+        print("**************************************Deque [ERROR]\n")
 
     if prob6() == 0:
-        print("***Deque2 [PASSED]\n")
+        print("**************************************Deque2 [PASSED]\n")
     else:
-        print("***Deque2 [ERROR]\n")        
+        print("**************************************Deque2 [ERROR]\n")        
 
 def prob1():
     try:
