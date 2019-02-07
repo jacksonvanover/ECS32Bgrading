@@ -59,7 +59,7 @@ def prob1():
         return flag    
 
     except:
-        print("crashed!")
+        print("_____crashed!")
         return 1
 
 def prob3():
@@ -96,7 +96,7 @@ def prob3():
         return flag
 
     except:
-        print("crashed!")
+        print("_____crashed!")
         return 1
 
 def prob4():
@@ -127,7 +127,7 @@ def prob4():
         return flag
 
     except:
-        print("crashed!")
+        print("_____crashed!")
         return 1
 
 def prob5():
@@ -173,7 +173,7 @@ def prob5():
         return flag
 
     except:
-        print("crashed!")
+        print("_____crashed!")
         return 1
 
 def prob6():
@@ -219,7 +219,7 @@ def prob6():
         return flag
 
     except:
-        print("crashed!")
+        print("_____crashed!")
         return 1
 
 if __name__ == "__main__":
