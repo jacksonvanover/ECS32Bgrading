@@ -6,6 +6,7 @@ with open("hw2.py", 'r+') as f:
         f.write("from nodes import *".rstrip('\r\n') + '\n' + content)
 
 from hw2 import *
+import logging
 
 def main():
     if prob1() == 0:
@@ -80,7 +81,7 @@ def prob1():
         return flag    
 
     except:
-        print("_____crashed!")
+        logging.exception("_____crashed!")
         return 1
 
 def prob3():
@@ -117,7 +118,7 @@ def prob3():
         return flag
 
     except:
-        print("_____crashed!")
+        logging.exception("_____crashed!")
         return 1
 
 def prob4():
@@ -148,7 +149,7 @@ def prob4():
         return flag
 
     except:
-        print("_____crashed!")
+        logging.exception("_____crashed!")
         return 1
 
 def prob5():
@@ -194,7 +195,7 @@ def prob5():
         return flag
 
     except:
-        print("_____crashed!")
+        logging.exception("_____crashed!")
         return 1
 
 def prob6():
@@ -240,7 +241,7 @@ def prob6():
         return flag
 
     except:
-        print("_____crashed!")
+        logging.exception("_____crashed!")
         return 1
 
 if __name__ == "__main__":
