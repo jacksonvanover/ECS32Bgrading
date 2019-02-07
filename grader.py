@@ -35,214 +35,254 @@ def main():
         print("**************************************Deque2 [ERROR]\n")        
 
 def prob1():
+    flag = 0
     try:
-        flag = 0
         x = QueueX()
-        if x.isEmpty() is not True:
-            print("isEmpty Error")
+    except:
+        print("\nConstructor Error")
+        flag = crash(flag)
+    
+    try:
+        if x.isEmpty() != True:
+            print("\nisEmpty Error")
             flag += 1
-
+    except:
+        print("\nisEmpty crash")
+        flag = crash(flag)
+    
+    try:
         x.enqueue(1)
         x.enqueue(2)
-
-        if x.items[0] != 1:
-            print("enqueue error")
-            flag += 1
-        if x.size() != 2:
-            print("size error")
-            flag += 1
-
         x.enqueue(3)
-
-        if x.items[len(x.items)-1] != 3:
-            print("enqueue error")
-            flag += 1
-
-        if x.isEmpty() is True:
-            print("isEmpty error")
-            flag += 1
-
-        if x.items != [1,2,3]:
-            print("enqueue error")
-            flag += 1
-
-        if x.size() is not 3:
-            print("size error")
-            flag += 1
-
-        if x.dequeue() != 1:
-            print("dequeue error")
-            flag += 1
-
-        if x.items[0] != 2:
-            print("enqueue or dequeue error")
-            flag += 1
-
-        return flag    
-
+        x.enqueue(4)
+        x.enqueue(5)
     except:
-        logging.exception("_____crashed!")
-        return 1
+        print("\nenqueue crash")
+        flag = crash(flag)
+
+    try:
+        if x.size() != 5:
+            print("\nsize Error")
+            flag += 1
+    except:
+        print("\nsize crash")
+        flag = crash(flag)
+
+    try:
+        if x.dequeue() != 1:
+            print("\ndequeue error")
+            flag += 1
+    except:
+        print("\ndequeue crash")
+        flag = crash(flag)
+
+    return flag
 
 def prob3():
+    flag = 0
     try:
-        flag = 0
         x = Stack()
-        if x.isEmpty() != True:
-            print("isEmpty Error")
-            flag += 1
-        if x.size() != 0:
-            print("size error")
-            flag += 1
-        x.push(1)
-        x.push(2)
-        if x.isEmpty() == True:
-            print("isEmpty Error")
-            flag += 1
-        if x.size() != 2:
-            print("size error")
-            flag += 1
-        if x.peek() != 2:
-            print("peek error")
-            flag += 1
-        x.push(3)
-        if x.size() != 3:
-            print("size error")
-            flag += 1
-        if x.pop() != 3:
-            print("pop error")
-            flag += 1
-        if x.pop() != 2:
-            print("pop error")
-            flag += 1
-        return flag
-
     except:
-        logging.exception("_____crashed!")
-        return 1
+        print("\nConstructor Error")
+        flag = crash(flag)
+    
+    try:
+        if x.isEmpty() != True:
+            print("\nisEmpty Error")
+            flag += 1
+    except:
+        print("\nisEmpty crash")
+        flag = crash(flag)
+    
+    try:
+        x.push(5)
+        x.push(4)
+        x.push(3)
+        x.push(2)
+        x.push(1)
+    except:
+        print("\npush crash")
+        flag = crash(flag)
+
+    try:
+        if x.size() != 5:
+            print("\nsize Error")
+            flag += 1
+    except:
+        print("\nsize crash")
+        flag = crash(flag)
+
+    try:
+        if x.pop() != 1:
+            print("\npop error")
+            flag += 1
+    except:
+        print("\npop crash")
+        flag = crash(flag)
+
+    return flag
 
 def prob4():
+    flag = 0
     try:
-        flag = 0
         x = Queue()
+    except:
+        print("\nConstructor Error")
+        flag = crash(flag)
+    
+    try:
         if x.isEmpty() != True:
-            print("isEmpty Error")
+            print("\nisEmpty Error")
             flag += 1
-        if x.size() != 0:
-            print("size error")
-            flag += 1
+    except:
+        print("\nisEmpty crash")
+        flag = crash(flag)
+    
+    try:
         x.enqueue(1)
         x.enqueue(2)
-        if x.isEmpty() == True:
-            print("isEmpty Error")
-            flag += 1
-        if x.size() != 2:
-            print("size error")
-            flag += 1
         x.enqueue(3)
-        if x.dequeue() != 1:
-            print("dequeue error")
-            flag += 1
-        if x.dequeue() != 2:
-            print("dequeue error")
-            flag += 1
-        return flag
-
+        x.enqueue(4)
+        x.enqueue(5)
     except:
-        logging.exception("_____crashed!")
-        return 1
+        print("\nenqueue crash")
+        flag = crash(flag)
+
+    try:
+        if x.size() != 5:
+            print("\nsize Error")
+            flag += 1
+    except:
+        print("\nsize crash")
+        flag = crash(flag)
+
+    try:
+        if x.dequeue() != 1:
+            print("\ndequeue error")
+            flag += 1
+    except:
+        print("\ndequeue crash")
+        flag = crash(flag)
+
+    return flag
 
 def prob5():
+    flag = 0
     try:
-        flag = 0
         x = Deque()
-
-        if x.isEmpty() != True:
-            print("isEmpty Error")
-            flag += 1
-        if x.size() != 0:
-            print("size error")
-            flag += 1
-
-        x.addFront(2)
-        x.addFront(1)
-
-        if x.isEmpty() == True:
-            print("isEmpty Error")
-            flag += 1
-        if x.size() != 2:
-            print("size error")
-            flag += 1
-        
-        x.addRear(3)
-        x.addFront(0)
-        
-        if x.size() != 4:
-            print("size error")
-            flag += 1
-        if x.removeFront() != 0:
-            print("removeFront error")
-            flag += 1
-        if x.removeRear() != 3:
-            print("removeRear error")
-            flag += 1
-        if x.removeRear() != 2:
-            print("removeRear error")
-            flag += 1
-        if x.removeRear() != 1:
-            print("removeRear error")
-            flag += 1
-        return flag
-
     except:
-        logging.exception("_____crashed!")
-        return 1
-
-def prob6():
+        print("\nConstructor Error")
+        flag = crash(flag)
     try:
-        flag = 0
-        x = Deque2()
-
         if x.isEmpty() != True:
-            print("isEmpty Error")
+            print("\nisEmpty Error")
             flag += 1
-        if x.size() != 0:
-            print("size error")
-            flag += 1
-
+    except:
+        print("\nisEmpty crash")
+        flag = crash(flag)
+    
+    try:
+        x.addFront(3)
         x.addFront(2)
         x.addFront(1)
-
-        if x.isEmpty() == True:
-            print("isEmpty Error")
-            flag += 1
-        if x.size() != 2:
-            print("size error")
-            flag += 1
-        
-        x.addRear(3)
-        x.addFront(0)
-        
-        if x.size() != 4:
-            print("size error")
-            flag += 1
-        if x.removeFront() != 0:
-            print("removeFront error")
-            flag += 1
-        if x.removeRear() != 3:
-            print("removeRear error")
-            flag += 1
-        if x.removeRear() != 2:
-            print("removeRear error")
-            flag += 1
-        if x.removeRear() != 1:
-            print("removeRear error")
-            flag += 1
-        return flag
-
     except:
-        logging.exception("_____crashed!")
-        return 1
+        print("\naddFront crash")
+        flag = crash(flag)
+
+    try:
+        x.addRear(4)
+        x.addRear(5)
+    except:
+        print("\naddRear crash")
+        flag = crash(flag)
+
+    try:
+        if x.size() != 5:
+            print("\nsize Error")
+            flag += 1
+    except:
+        print("\nsize crash")
+        flag = crash(flag)
+
+    try:
+        if x.removeFront() != 1:
+            print("\nremoveFront error")
+            flag += 1
+    except:
+        print("\nremoveFront crash")
+        flag = crash(flag)
+
+    try:
+        if x.removeRear() != 5:
+            print("\nremoveRear error")
+            flag += 1
+    except:
+        print("\nremoveRear crash")
+        flag = crash(flag)
+
+    return flag
+    
+def prob6():
+    flag = 0
+    try:
+        x = Deque2()
+    except:
+        print("\nConstructor Error")
+        flag = crash(flag)
+    
+    try:
+        if x.isEmpty() != True:
+            print("\nisEmpty Error")
+            flag += 1
+    except:
+        print("\nisEmpty crash")
+        flag = crash(flag)
+    
+    try:
+        x.addFront(3)
+        x.addFront(2)
+        x.addFront(1)
+    except:
+        print("\naddFront crash")
+        flag = crash(flag)
+
+    try:
+        x.addRear(4)
+        x.addRear(5)
+    except:
+        print("\naddRear crash")
+        flag = crash(flag)
+
+    try:
+        if x.size() != 5:
+            print("\nsize Error")
+            flag += 1
+    except:
+        print("\nsize crash")
+        flag = crash(flag)
+
+    try:
+        if x.removeFront() != 1:
+            print("\nremoveFront error")
+            flag += 1
+    except:
+        print("\nremoveFront crash")
+        flag = crash(flag)
+
+    try:
+        if x.removeRear() != 5:
+            print("\nremoveRear error")
+            flag += 1
+    except:
+        print("\nremoveRear crash")
+        flag = crash(flag)
+
+    return flag
+
+def crash(flag):
+    logging.error("_____crashed!")
+    flag += 1
+    return flag
 
 if __name__ == "__main__":
     main()
