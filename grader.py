@@ -39,7 +39,7 @@ def prob1():
     try:
         x = QueueX()
     except:
-        print("\nConstructor Error")
+        print("\nConstructor crash")
         flag = crash(flag)
     
     try:
@@ -83,7 +83,7 @@ def prob3():
     try:
         x = Stack()
     except:
-        print("\nConstructor Error")
+        print("\nConstructor crash")
         flag = crash(flag)
     
     try:
@@ -127,7 +127,7 @@ def prob4():
     try:
         x = Queue()
     except:
-        print("\nConstructor Error")
+        print("\nConstructor crash")
         flag = crash(flag)
     
     try:
@@ -171,7 +171,7 @@ def prob5():
     try:
         x = Deque()
     except:
-        print("\nConstructor Error")
+        print("\nConstructor crash")
         flag = crash(flag)
     try:
         if x.isEmpty() != True:
@@ -227,7 +227,7 @@ def prob6():
     try:
         x = Deque2()
     except:
-        print("\nConstructor Error")
+        print("\nConstructor crash")
         flag = crash(flag)
     
     try:
