@@ -12,9 +12,9 @@ Please remember that this is not the final test to see how well a student did on
  `[ERROR]` means there are some problems with the class. The issues should be listed directly above the tag.
  
  There are two types of issues:
-    `ERROR:root:_____crashed!` tags mean some sort of exception occurred. This could be a syntax problem, name discrepancies, the code could just flat out not be there, etc. The method where the exception occurred is listed above the tag.
+   `ERROR:root:_____crashed!` tags mean some sort of exception occurred. This could be a syntax problem, name discrepancies, the code could just flat out not be there, etc. The method where the exception occurred is listed above the tag.
 
-    `<method name> mismatch` indicates that the method in question didn't return the proper output.
+   `<method name> mismatch` indicates that the method in question didn't return the proper output.
 
   
  Hopefully this is more of a help than a hindrance! Good luck.
