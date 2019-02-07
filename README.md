@@ -9,8 +9,8 @@ Please remember that this is not the final test to see how well a student did on
  
  `[PASSED]` tags means it works as expected; just check that their implementation is good.
  
- `[ERROR]` tags means there are some problems with the class. The methods that caused issues should be listed directly above the tag.
+ `[ERROR]` tags means there are some problems with the class. The issues should be listed directly above the tag.
  
- `_____crashed!` tags mean some sort of exception occurred. The error log will be printed.
+ `_____crashed!` tags mean some sort of exception occurred. The error log will be printed. This will only catch the first exception that is thrown. There may be multiple exceptions. You should check out the code to find what's wrong.
  
  Hopefully this is more of a help than a hindrance! Good luck.
