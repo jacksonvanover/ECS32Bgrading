@@ -1,6 +1,6 @@
 # hw2grading
 
-You will have to download student assignments into the directory containing `grader.py` and `nodes.py`.
+You will have to download each student assignment into the directory containing `grader.py` and `nodes.py`.
 Then, simply run `python grader.py`. You'll have to grade the slice method by hand.
 
 In order for this to work, the student assignments must be named `hw2.py`. 
