@@ -1,9 +1,10 @@
-"""
 with open("hw2.py", 'r+') as f:
-    content = f.read()
-    f.seek(0, 0)
-    f.write("from nodes import *".rstrip('\r\n') + '\n' + content)
-"""
+    if f.readline().strip() != "from nodes import *":
+        f.seek(0,0)
+        content = f.read()
+        f.seek(0, 0)
+        f.write("from nodes import *".rstrip('\r\n') + '\n' + content)
+
 from hw2 import *
 
 def main():
