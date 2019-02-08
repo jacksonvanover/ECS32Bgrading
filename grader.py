@@ -85,14 +85,14 @@ def prob1():
     return flag
 
 def prob2():
-    x = UnorderedList()
-    x.add(5)
-    x.add(4)
-    x.add(3)
-    x.add(2)
-    x.add(1)
-    x.add(0)
     try:
+        x = UnorderedList()
+        x.add(5)
+        x.add(4)
+        x.add(3)
+        x.add(2)
+        x.add(1)
+        x.add(0)
         y = x.slice(0,4)
         if y.head.getData() != 0 or y.head.getNext().getData() != 1 or y.head.getNext().getNext().getData() != 2 or y.head.getNext().getNext().getNext().getData() != 3:
             print("slice mismatch")
