@@ -2,13 +2,15 @@
 
 ### Requirements
 You will have to download each student assignment into the directory containing `grader.py` and `nodes.py`.
-Then, simply run `python grader.py`. You'll have to grade the slice method by hand.
+Then, simply run `python grader.py`.
 
 In order for this to work, the student assignments must be named `hw2.py`. 
 
 ### Usage
 
 Please remember that this is not the final test to see how well a student did on the assignment. It's more like a tool that will help you decide how carefully you need to look at the student's code. If everything passes, you won't have to look so hard.
+
+Regarding the slice method; there's a test in there but it will only work if the student included a working UnorderedList class. Enough students seemed to do this on their own so I included the test. Otherwise, you'll have to grade it by hand.
  
  `[PASSED]` means the class works as expected; just glance at their implementation to make sure it looks good.
  
