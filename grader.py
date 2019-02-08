@@ -1,3 +1,4 @@
+
 with open("hw2.py", 'r+') as f:
     if f.readline().strip() != "from nodes import *":
         f.seek(0,0)
@@ -313,7 +314,7 @@ def prob6():
     return flag
 
 def crash(flag):
-    logging.error("_____crashed!")
+    logging.exception("_____crashed!")
     flag += 1
     return flag
 
