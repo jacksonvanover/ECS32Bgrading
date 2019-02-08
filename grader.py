@@ -6,6 +6,7 @@ with open("hw2.py", 'r+') as f:
         f.write("from nodes import *".rstrip('\r\n') + '\n' + content)
 
 from hw2 import *
+#from UnorderedList import *
 import logging
 
 def main():
@@ -13,6 +14,11 @@ def main():
         print("**************************************QueueX [PASSED]\n")
     else:
         print("**************************************QueueX [ERROR]\n")
+
+    if prob2() == 0:
+        print("**************************************slice [PASSED]\n")
+    else:
+        print("**************************************slice [ERROR]\n")
 
     if prob3() == 0:
         print("**************************************Stack [PASSED]\n")
@@ -78,6 +84,25 @@ def prob1():
 
     return flag
 
+def prob2():
+    x = UnorderedList()
+    x.add(5)
+    x.add(4)
+    x.add(3)
+    x.add(2)
+    x.add(1)
+    x.add(0)
+    try:
+        y = x.slice(0,4)
+        if y.head.getData() != 0 or y.head.getNext().getData() != 1 or y.head.getNext().getNext().getData() != 2 or y.head.getNext().getNext().getNext().getData() != 3:
+            print("slice mismatch")
+            return 1
+    except:
+        crash(1)
+        return 1
+
+    return 0
+
 def prob3():
     flag = 0
     try:
@@ -118,6 +143,14 @@ def prob3():
             flag += 1
     except:
         print("\npop")
+        flag = crash(flag)
+
+    try:
+        if x.peek() != 2:
+            print("\npeek mismatch")
+            flag += 1
+    except:
+        print("\npeek")
         flag = crash(flag)
 
     return flag
