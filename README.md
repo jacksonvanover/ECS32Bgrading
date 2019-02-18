@@ -1,4 +1,4 @@
-# hw2grading
+# ECS 32B Grading
 
 ### Requirements
 You will have to download each student assignment into the directory containing `grader.py` and it's dependencies.
