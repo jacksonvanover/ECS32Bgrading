@@ -95,6 +95,11 @@ def prob2():
         x.add(1)
         x.add(0)
         y = x.slice(0,4)
+        current = y.head
+        while current != None:
+            print(current.getData(), ", ")
+            current = current.getNext()
+
         if y.head.getData() != 0 or y.head.getNext().getData() != 1 or y.head.getNext().getNext().getData() != 2 or y.head.getNext().getNext().getNext().getData() != 3:
             print("slice mismatch")
             return 1
