@@ -30,7 +30,7 @@ def main():
         print("*****************************************************************#5 findValue [PASSED]\n")
     else:
         print("******************************************************************#5 findValue [ERROR]\n")
-    if prob5() == 0:
+    if prob6() == 0:
         print("*************************************************************#6 findLastValue [PASSED]\n")
     else:
         print("**************************************************************#6 findLastValue [ERROR]\n")
@@ -164,10 +164,13 @@ def prob5():
 
     try:
         if findValue('A', n1) != True:
+            print("Was expecting True but got ", findValue('A', n1))
             flag +=1
         if findValue('D', n1) != True:
+            print("Was expecting True but got ", findValue('D', n1))
             flag +=1
         if findValue(9, n1) != False:
+            print("Was expecting False but got ", findValue(9, n1))
             flag +=1
         return flag
     except:
@@ -186,6 +189,7 @@ def prob6():
 
     try:
         if findLastValue(n1) != 'D':
+            print("Was expecting 'D' but got ", findLastValue(n1))
             flag += 1
         return flag
     except:
