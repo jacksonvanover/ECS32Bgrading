@@ -78,6 +78,7 @@ def prob3():
     a = [6,8,2,34,6,7,94,234,2,89,67,2,34]
     try:
         if findLargest(a) != 234:
+            print("Was expecting 234 but got ", findLargest(a))
             flag += 1
         return flag
     except:
@@ -118,7 +119,11 @@ def prob4():
             print("FIND ERROR")
             print("Was expecting [1,1] but got ", b5)
             flag += 1
+    except:
+        logging.exception("_____crashed!")
+        flag += 1
 
+    try:
         c1 = verifyPossibilities(a1, [])
         c2 = verifyPossibilities(a2, [1])
         c3 = verifyPossibilities(a3,[3,5])
