@@ -107,9 +107,9 @@ def prob4():
             print("FIND ERROR")
             print("Was expecting [1] but got ", b2)
             flag += 1
-        if b3 != [3,5]:
+        if b3 != [3,5] and b3 != [3,3]:
             print("FIND ERROR")
-            print("Was expecting [3,5] but got ", b3)
+            print("Was expecting [3,5] or [3,3] but got ", b3)
             flag += 1
         if b4 != []:
             print("FIND ERROR")
