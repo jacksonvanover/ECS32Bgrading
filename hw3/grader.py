@@ -87,7 +87,7 @@ def prob3():
 def prob4():
     flag = 0
     a1 = [1,4,1,4]
-    a2 = [1,4,1,4,1]
+    a2 = [7,4,7,4,7]
     a3 = [3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,5]
     a4 = [2,7,2,7,2,7,2,7,2,7,2,7,2,7]
     a5 = [1,2,1,3,1,9,1,1,1,4,5,1,1,6,6,7,7,1,1]
@@ -103,9 +103,9 @@ def prob4():
             print("FIND ERROR")
             print("Was expecting [] but got ", b1)
             flag += 1
-        if b2 != [1]:
+        if b2 != [7]:
             print("FIND ERROR")
-            print("Was expecting [1] but got ", b2)
+            print("Was expecting [7] but got ", b2)
             flag += 1
         if b3 != [3,5] and b3 != [3,3]:
             print("FIND ERROR")
@@ -125,7 +125,7 @@ def prob4():
 
     try:
         c1 = verifyPossibilities(a1, [])
-        c2 = verifyPossibilities(a2, [1])
+        c2 = verifyPossibilities(a2, [7])
         c3 = verifyPossibilities(a3,[3,5])
         c4 = verifyPossibilities(a4, [])
         c5 = verifyPossibilities(a5, [1,1])
@@ -134,9 +134,9 @@ def prob4():
             print("VERIFY ERROR")
             print("Was expecting None but got ", c1)
             flag += 1
-        if c2 != 1:
+        if c2 != 7:
             print("VERIFY ERROR")
-            print("Was expecting 1 but got ", c2)
+            print("Was expecting 7 but got ", c2)
             flag += 1
         if c3 != 3:
             print("VERIFY ERROR")
