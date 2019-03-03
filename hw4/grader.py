@@ -11,10 +11,10 @@ def insertHashTableClass():
     studentCode = f1.readlines()
     f1.seek(0,0)
 
-    # # check if student's code has gone through the grader once already
-    # for line in studentCode:
-    #     if "# pineapple" in line:
-    #         return
+    # check if student's code has gone through the grader once already
+    for line in studentCode:
+        if "class HashTable" in line:
+            return
 
     # open the Incomplete HashTable Class file
     f2 = open("hashTableIncomplete.py", 'r')
@@ -26,30 +26,30 @@ def insertHashTableClass():
 
     i = 0
     j = 0
-    flag = False
+    #flag = False
 
     # until reading the line containing the put function header
     while "def put(" not in studentCode[i] and i < len(studentCode):
 
-        # if the student's code contains a hashtable class, don't write any of those lines
-        if "class Hash" in studentCode[i] or "class hash" in studentCode[i]:
-            flag = True
-            while "def put(" not in studentCode[i] and i < len(studentCode):
-                i += 1
-            break
-        else:
-            f1.write(studentCode[i])
-            i += 1
+        # # if the student's code contains a hashtable class, don't write any of those lines
+        # if "class Hash" in studentCode[i] or "class hash" in studentCode[i]:
+        #     flag = True
+        #     while "def put(" not in studentCode[i] and i < len(studentCode):
+        #         i += 1
+        #     break
+        # else:
+        f1.write(studentCode[i])
+        i += 1
     while "# insert put method here" not in hashTableClass[j] and j < len(hashTableClass):
         f1.write(hashTableClass[j])
         j += 1
     while i < len(studentCode):
-        if "def hash" in studentCode[i]:
-            break
-        elif flag:
-            f1.write(studentCode[i])
-        else:
-            f1.write("    " + studentCode[i])
+        # if "def hash" in studentCode[i]:
+        #     break
+        # elif flag:
+        #     f1.write(studentCode[i])
+        # else:
+        f1.write("    " + studentCode[i])
         i += 1
     j += 1
     while j < len(hashTableClass):
