@@ -11,9 +11,9 @@ def insertHashTableClass():
     studentCode = f1.readlines()
     f1.seek(0,0)
 
-    # check if student's code has gone through the grader once already
+    # check if student's code has gone through the grader once already or if they have a HashTable class already
     for line in studentCode:
-        if "class HashTable" in line:
+        if "class HashTable" in line or "# pineapple" in line:
             return
 
     # open the Incomplete HashTable Class file
@@ -29,7 +29,7 @@ def insertHashTableClass():
     #flag = False
 
     # until reading the line containing the put function header
-    while "def put(" not in studentCode[i] and i < len(studentCode):
+    while i < len(studentCode) and "def put(" not in studentCode[i]:
 
         # # if the student's code contains a hashtable class, don't write any of those lines
         # if "class Hash" in studentCode[i] or "class hash" in studentCode[i]:
