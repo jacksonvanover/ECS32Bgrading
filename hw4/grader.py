@@ -1,10 +1,25 @@
+from hw4 import *
+from hashTableCorrect import *
+import logging
+
 def insertHashTableClass():
+    # open student's hw4 file
     f1 = open("hw4.py", 'r+')
+
+    # read in students code
     f1.seek(0,0)
     studentCode = f1.readlines()
     f1.seek(0,0)
 
+    # # check if student's code has gone through the grader once already
+    # for line in studentCode:
+    #     if "# pineapple" in line:
+    #         return
+
+    # open the Incomplete HashTable Class file
     f2 = open("hashTableIncomplete.py", 'r')
+
+    # read in hashTableClass
     f2.seek(0,0)
     hashTableClass = f2.readlines()
     f2.close()
@@ -12,9 +27,12 @@ def insertHashTableClass():
     i = 0
     j = 0
     flag = False
+
+    # until reading the line containing the put function header
     while "def put(" not in studentCode[i] and i < len(studentCode):
+
+        # if the student's code contains a hashtable class, don't write any of those lines
         if "class Hash" in studentCode[i] or "class hash" in studentCode[i]:
-            i += 1
             flag = True
             while "def put(" not in studentCode[i] and i < len(studentCode):
                 i += 1
@@ -40,10 +58,6 @@ def insertHashTableClass():
 
     f1.close()
 
-from hw4 import *
-from hashTableCorrect import *
-import logging
-
 def main():
     if prob1() == 0:
         print("****************************************************************#1 ternarySearch [PASSED]\n")
@@ -67,16 +81,22 @@ def prob1():
 
     try:
         if ternarySearch(a1, 4) != True:
+            print("Was expecting True but got False")
             flag += 1
         if ternarySearch(a1, 0) != False:
+            print("Was expecting False but got True")
             flag += 1
         if ternarySearch(a2, 9) != False:
+            print("Was expecting False but got True")
             flag += 1
         if ternarySearch(a2, 3568456) != True:
+            print("Was expecting True but got False")
             flag += 1
         if ternarySearch(a3, 27) != True:
+            print("Was expecting True but got False")
             flag += 1
         if ternarySearch(a3, 87) != False:
+            print("Was expecting False but got True")
             flag += 1
         return flag
     except:
@@ -90,16 +110,22 @@ def prob2():
 
     try:
         if ternarySearchRec(a1, 4) != True:
+            print("Was expecting True but got False")
             flag += 1
         if ternarySearchRec(a1, 0) != False:
+            print("Was expecting False but got True")
             flag += 1
         if ternarySearchRec(a2, 9) != False:
+            print("Was expecting False but got True")
             flag += 1
         if ternarySearchRec(a2, 3568456) != True:
+            print("Was expecting True but got False")
             flag += 1
         if ternarySearchRec(a3, 27) != True:
+            print("Was expecting True but got False")
             flag += 1
         if ternarySearchRec(a3, 87) != False:
+            print("Was expecting False but got True")
             flag += 1
         return flag
     except:
@@ -110,19 +136,36 @@ def prob3():
     flag = 0
     x=HashTable()
     y=HashTableCorrect(x.size)
+    ogSize = x.size
     try:
-        for i in range(1,x.size+1):
-            x[i] = i**2
-            y[i] = i**2
+        for i in range(1,x.size+2):
+            x[i**2] = "data{}".format(i)
+            y[i**2] = "data{}".format(i)
+            lastData = "data{}".format(i)
 
-        if x.slots != y.slots:
-            print("Slots mismatch")
-            flag += 1
-        if x.data != y.data:
-            print("Data Mismatch")
-            flag += 1
         if x.size != y.size:
-            print("Size mismatch")
+            print("<<Resize mismatch>>")
+            print("(Original hashtable size was {})".format(ogSize))
+            print("Was expecting resize to {} but instead got resize to {}".format(y.size, x.size))
+            print()
+            flag += 1
+        if x.slots != y.slots:
+            print("<<Slots mismatch>>")
+            print("Was expecting {}".format(y.slots))
+            print("Instead, got  {}".format(x.slots))
+            print()
+            flag += 5
+        if x.data != y.data:
+            print("<<Data Mismatch>>")
+            print("Was expecting {}".format(y.data))
+            print("Instead, got  {}".format(x.data))
+            print()
+            flag += 5
+        if flag > 3:
+            print("Note: last item to be placed that is causing the resize is [144:data12]\n")
+        if lastData not in x.data:
+            print("<<Put method didn't ultimately place the last item that caused the resize, {}, possibly only reason for mismatch?>>".format(lastData))
+            print()
             flag += 1
 
         return flag

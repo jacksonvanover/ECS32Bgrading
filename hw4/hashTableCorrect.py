@@ -24,7 +24,6 @@ class HashTableCorrect:
                     nextslot = self.rehash(nextslot,len(self.slots))
 
                     if nextslot == hashvalue:
-                        print("RESIZING TABLE")
 
                         self.size = 2 * self.size + 1
                         i = 3
@@ -32,8 +31,6 @@ class HashTableCorrect:
                             while self.size % i == 0:
                                 self.size += 2
                             i+=1
-                        
-                        print("new size: ", self.size)
 
                         oldSlots = self.slots
                         oldData = self.data
